@@ -17,7 +17,21 @@ class TriCalculator {
     //1
     
     func returnPossibleTips() -> [Int:Double]{
-    
         
+        let possibleTipsInferred = [0.15,018,0.20]
+        let possibleTipExplicit:[Double] = [0.15,0.18,0.20]
+        var numberOfItems = possibleTipsInferred.count
+        //2
+        var retval = [Int:Double]()
+        for possibleTip in possibleTipsInferred{
+                let intPct = Int(possibleTip*100)
+                    //3
+                    retval[intPct] = calcTipwithTipPct(possibleTip)
+        }
+        return retval
+    }
     
 }
+        //6 
+let tipCalc = tipCalculator(total:33.25,taxPct:0.06)
+tipCalc.returnPossibleTips()
