@@ -10,20 +10,16 @@ let tutorialTeamExplicit: Int = -19
 let priceInferred = -19.99
 let priceExplicit:Double = -19.99
 
-let priceInferred = -19.99
-let priceExplicit:Float = -19.99
+let priceFlostInferred = -19.99
+let priceFloatExplicit:Float = -19.99
 
-let onSaleInferred = true
+let onSaleInterred = true
 let onSaleExplicit:Bool = false
 
 let nameInferred = "Whoopie Cushion"
 let nameExplicit:String = "Whoopie Cushion"
 
-if (onSaleInferred) {
-    println("\(nameInferred) on sale for \(priceInferred)!")
-} else {
-    println("\(nameInferred) at regular price: \(priceInferred)!")
-}
+
 
 //Array
 var shoppingListExplicit = [String]()
@@ -39,3 +35,13 @@ var firstItem = shoppingList[0]
 shoppingList[0] = "Six eggs"
 //shoppingList[0...3] = ["Bananas","Apples"]
 shoppingList
+
+
+
+
+
+
+
+
+
+
