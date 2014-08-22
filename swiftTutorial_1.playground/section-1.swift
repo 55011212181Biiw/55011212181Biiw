@@ -7,11 +7,11 @@ totalTeam += 1
 let tutorialTeamInferred = -19
 let tutorialTeamExplicit: Int = -19
 
-let priceInferred = 19
-let priceExplicit:Int = 19
-
 let priceInferred = -19.99
 let priceExplicit:Double = -19.99
+
+let priceInferred = -19.99
+let priceExplicit:Float = -19.99
 
 let onSaleInferred = true
 let onSaleExplicit:Bool = false
