@@ -33,7 +33,7 @@ shoppingList += "Banking Powder"
 shoppingList += ["Chocolate Spread","cheese","Butter"]
 var firstItem = shoppingList[0]
 shoppingList[0] = "Six eggs"
-//shoppingList[0...3] = ["Bananas","Apples"]
+shoppingList[0...3] = ["Bananas","Apples"]
 shoppingList
 
 
