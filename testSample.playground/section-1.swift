@@ -1,20 +1,18 @@
+//ลองทำ
 
 
-//Matching 
-let  myScore = 65
-
+let  myScore = 70
 switch myScore {
-case 80...100:
-        println("grade A")
+    case 80...100:
+    println("grade A")
 case 70...80:
-        println("grade B")
+    println("grade B")
 case 60...70:
-        println("grade C")
+    println("grade C")
 case 50...60:
-        println("grade D")
+    println("grade D")
 default:
-        println("Grade F")
+    println("Grade F")
     
-}
-
+    }
 
