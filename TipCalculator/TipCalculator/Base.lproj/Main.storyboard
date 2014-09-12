@@ -25,6 +25,14 @@
                                     <rect key="frame" x="9" y="81" width="164" height="41"/>
                                 </variation>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="cT2-er-Eh0">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="169" y="87" width="139" height="30"/>
+                                </variation>
+                            </textField>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="6" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="tDc-TV-ldS">
                                 <rect key="frame" x="0.0" y="-15" width="118" height="31"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
@@ -36,12 +44,12 @@
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5eu-hf-Qaf">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Calculate">
+                                <state key="normal" image="Unknown.jpg">
                                     <color key="titleColor" red="0.085260198838588805" green="0.54223975789813417" blue="0.55610251913265307" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.15153039099338542" green="0.62715479799707363" blue="0.71059869260204089" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="108" y="155" width="89" height="101"/>
+                                    <rect key="frame" x="106" y="155" width="127" height="140"/>
                                 </variation>
                                 <connections>
                                     <action selector="calculatorTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="K36-Pf-wk4"/>
@@ -63,38 +71,30 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="47" y="291" width="210" height="58"/>
+                                    <rect key="frame" x="55" y="326" width="210" height="58"/>
                                 </variation>
                             </textView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="cT2-er-Eh0">
-                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="169" y="87" width="139" height="30"/>
-                                </variation>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="7dF-P6-Zfu"/>
+                                <exclude reference="cT2-er-Eh0"/>
                                 <exclude reference="tDc-TV-ldS"/>
                                 <exclude reference="5eu-hf-Qaf"/>
                                 <exclude reference="Gw5-gl-tH8"/>
                                 <exclude reference="brj-YB-kPR"/>
-                                <exclude reference="cT2-er-Eh0"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="7dF-P6-Zfu"/>
+                                <include reference="cT2-er-Eh0"/>
                                 <include reference="tDc-TV-ldS"/>
                                 <include reference="5eu-hf-Qaf"/>
                                 <include reference="Gw5-gl-tH8"/>
                                 <include reference="brj-YB-kPR"/>
-                                <include reference="cT2-er-Eh0"/>
                             </mask>
                         </variation>
                         <connections>
@@ -142,4 +142,7 @@
             <point key="canvasLocation" x="789" y="146"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Unknown.jpg" width="209" height="241"/>
+    </resources>
 </document>
