@@ -14,7 +14,18 @@ class ViewController: UIViewController {
     @IBOutlet var taxPctLabel :UILabel!
     @IBOutlet var resulTextView :UITextView!
     
-    @IBAction func calculatorTapped(sender :AnyObject){}
+    @IBAction func calculatorTapped(sender :AnyObject){
+        //1
+        tipCalc.total = Double((totalTextField.text as NSString).doubleValue)
+        //2
+        let possibleTips = tipCalc.returnPossibleTips()
+        var results = ""
+        //3
+        for (tipPct, tipValue) in possibleTips{
+            //4
+            results += "\(tipCalc)%:"
+        }
+    }
     @IBAction func taxPercentageChanged(sender :AnyObject){
         tipCalc.taxPct = Double(taxPctSlider.value) / 100.0
     refreshUI()
