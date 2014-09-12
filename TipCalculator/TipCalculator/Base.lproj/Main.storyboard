@@ -39,6 +39,9 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="179" y="210" width="190" height="31"/>
                                 </variation>
+                                <connections>
+                                    <action selector="taxPercentageChanged:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="a27-5s-C2F"/>
+                                </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5eu-hf-Qaf">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -48,6 +51,10 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="139" y="268" width="103" height="30"/>
                                 </variation>
+                                <connections>
+                                    <action selector="calculatorTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="K36-Pf-wk4"/>
+                                    <action selector="copy:" destination="brj-YB-kPR" eventType="touchUpInside" id="q3b-yN-o6T"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="brj-YB-kPR">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -64,7 +71,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="164" y="148" width="208" height="30"/>
+                                    <rect key="frame" x="172" y="148" width="208" height="30"/>
                                 </variation>
                             </textField>
                         </subviews>
@@ -95,9 +102,19 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" title="TipCalculator" id="n5w-IF-ASO"/>
+                    <connections>
+                        <outlet property="resulTextView" destination="brj-YB-kPR" id="Ctm-9Y-hSy"/>
+                        <outlet property="taxPctLabel" destination="Gw5-gl-tH8" id="pFs-9Q-Vae"/>
+                        <outlet property="taxPctSlider" destination="tDc-TV-ldS" id="VW1-Vq-gtF"/>
+                        <outlet property="totalTextField" destination="cT2-er-Eh0" id="Cvj-Kk-kQL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="rXx-T9-tAp"/>
+                <tapGestureRecognizer id="rXx-T9-tAp">
+                    <connections>
+                        <action selector="viewTapped:" destination="vXZ-lx-hvc" id="1Lu-fT-AXH"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1648.5" y="146"/>
         </scene>
