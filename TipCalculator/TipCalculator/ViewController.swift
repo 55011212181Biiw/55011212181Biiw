@@ -23,8 +23,10 @@ class ViewController: UIViewController {
         //3
         for (tipPct, tipValue) in possibleTips{
             //4
-            results += "\(tipCalc)%:"
+            results += "\(tipCalc)%: \(tipValue)\n"
         }
+        //5
+        resulTextView.text = results
     }
     @IBAction func taxPercentageChanged(sender :AnyObject){
         tipCalc.taxPct = Double(taxPctSlider.value) / 100.0
