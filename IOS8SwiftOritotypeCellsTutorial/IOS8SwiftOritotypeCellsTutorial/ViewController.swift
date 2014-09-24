@@ -35,7 +35,7 @@ class ViewController: UIViewController ,UITableViewDelegate,UITableViewDataSourc
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier(self.cellIdentifier)as UITableViewCell
         
-        cell.textLable!.text = self.tableData(indexPath.row)
+        cell.textLabel!.text = tableData[indexPath.row]
         var imageName = UIImage(named:tableData[indexPath.row])
         cell.imageView!.image = imageName
         return cell
@@ -44,6 +44,12 @@ class ViewController: UIViewController ,UITableViewDelegate,UITableViewDataSourc
         
     }
     //UITableViewDelegate methods
+    func  tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+        let alert = UIAlertController(title:"Item selected",message:"you selected item \(indexPath.row)",preferredStyle:UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title:"ok",style:UIAlertActionStyle.Default,handler:{(alert:UIAlertAction!) in println("An alert of type\(alert.style.hashValue)was tapped!")
+        }))
+        self.presentViewController(alert,animated:true,completion:nil)
+    }
 
 }
 

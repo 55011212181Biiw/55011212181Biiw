@@ -117,7 +117,7 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="labal0" destination="qQQ-bV-BFS" id="QIa-kM-bMJ"/>
+                        <outlet property="label0" destination="qQQ-bV-BFS" id="MbP-Zg-0Rf"/>
                         <outlet property="label1" destination="oaW-mw-JMb" id="8zz-WK-jtz"/>
                         <outlet property="label2" destination="joK-z6-oGv" id="55S-cC-gzB"/>
                     </connections>
