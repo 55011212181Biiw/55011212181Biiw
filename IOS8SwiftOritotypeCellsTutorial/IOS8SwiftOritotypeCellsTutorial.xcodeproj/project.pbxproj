@@ -13,6 +13,9 @@
 		3FD9147019D2B53D00DDECD7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FD9146F19D2B53D00DDECD7 /* Images.xcassets */; };
 		3FD9147319D2B53D00DDECD7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FD9147119D2B53D00DDECD7 /* LaunchScreen.xib */; };
 		3FD9147F19D2B53D00DDECD7 /* IOS8SwiftOritotypeCellsTutorialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD9147E19D2B53D00DDECD7 /* IOS8SwiftOritotypeCellsTutorialTests.swift */; };
+		3FD9148B19D2C15400DDECD7 /* Bus.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FD9148819D2C15400DDECD7 /* Bus.png */; };
+		3FD9148C19D2C15400DDECD7 /* Helicopter.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FD9148919D2C15400DDECD7 /* Helicopter.png */; };
+		3FD9148D19D2C15400DDECD7 /* Truck.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FD9148A19D2C15400DDECD7 /* Truck.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,9 @@
 		3FD9147819D2B53D00DDECD7 /* IOS8SwiftOritotypeCellsTutorialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IOS8SwiftOritotypeCellsTutorialTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FD9147D19D2B53D00DDECD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3FD9147E19D2B53D00DDECD7 /* IOS8SwiftOritotypeCellsTutorialTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOS8SwiftOritotypeCellsTutorialTests.swift; sourceTree = "<group>"; };
+		3FD9148819D2C15400DDECD7 /* Bus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bus.png; sourceTree = "<group>"; };
+		3FD9148919D2C15400DDECD7 /* Helicopter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Helicopter.png; sourceTree = "<group>"; };
+		3FD9148A19D2C15400DDECD7 /* Truck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Truck.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +96,9 @@
 		3FD9146619D2B53D00DDECD7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3FD9148819D2C15400DDECD7 /* Bus.png */,
+				3FD9148919D2C15400DDECD7 /* Helicopter.png */,
+				3FD9148A19D2C15400DDECD7 /* Truck.png */,
 				3FD9146719D2B53D00DDECD7 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -192,7 +201,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FD9148C19D2C15400DDECD7 /* Helicopter.png in Resources */,
+				3FD9148B19D2C15400DDECD7 /* Bus.png in Resources */,
 				3FD9146E19D2B53D00DDECD7 /* Main.storyboard in Resources */,
+				3FD9148D19D2C15400DDECD7 /* Truck.png in Resources */,
 				3FD9147319D2B53D00DDECD7 /* LaunchScreen.xib in Resources */,
 				3FD9147019D2B53D00DDECD7 /* Images.xcassets in Resources */,
 			);
