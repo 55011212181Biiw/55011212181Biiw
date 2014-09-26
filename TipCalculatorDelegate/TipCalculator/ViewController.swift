@@ -72,7 +72,6 @@ class ViewController: UIViewController,UITableViewDelegate {
         cell.textLabel!.text = "\(tipPct)%"
         cell.detailTextLabel!.text = String(format:"Tip:$%0.2f, total:$%0.2f", tipAmt,total)
         
-        print("TableView calculatTapped\(cell.detailTextLabel?.text)")
         return cell
         
     }
