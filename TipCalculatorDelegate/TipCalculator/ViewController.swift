@@ -19,19 +19,12 @@ class ViewController: UIViewController,UITableViewDelegate{
     var sortedKeys:[Int] = []
     
     
-    @IBAction func button(sender: AnyObject) {
-        //1
+    @IBAction func calculateTapped(sender: AnyObject) {
         tipCalc.total = Double((totalTextField.text as NSString).doubleValue)
-        //2
-        let possibleTips = tipCalc.returnPossibleTips()
         
-        var results = ""
-        //3
-        for (tipPct,tipValue) in possibleTips{
-            //4
-            results += "\(tipCalc)%: \(tipValue)\n"
-        }
-        
+        possibleTips = tipCalc.returnPossibleTips()
+        sortedKeys = sorted(Array(possibleTips.keys))
+        tableView.reloadData()
     }
 
     @IBAction func taxPercentageChanged(sender :AnyObject){
@@ -39,7 +32,6 @@ class ViewController: UIViewController,UITableViewDelegate{
     refreshUI()
     }
     @IBAction func viewTapped(sender :AnyObject){ totalTextField.resignFirstResponder()}
-    
     
     func refreshUI(){
         //1
@@ -56,14 +48,10 @@ class ViewController: UIViewController,UITableViewDelegate{
         // Do any additional setup after loading the view, typically from a nib.
         refreshUI()
     }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
-    
     func tableView(tableView:UITableView!,numberOfRowsInSection section:Int) ->Int{
         return sortedKeys.count
     }
