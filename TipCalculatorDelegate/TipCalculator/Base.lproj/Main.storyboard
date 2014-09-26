@@ -51,13 +51,25 @@
                                     <rect key="frame" x="9" y="117" width="176" height="35"/>
                                 </variation>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="T26-lR-n4p">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="wwq-wJ-4s0">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="33" y="168" width="252" height="373"/>
+                                    <rect key="frame" x="58" y="185" width="207" height="329"/>
                                 </variation>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1WE-IA-hrG">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Calculate">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="98" y="147" width="125" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="button:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="1bJ-CN-VmH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -67,7 +79,8 @@
                                 <exclude reference="cT2-er-Eh0"/>
                                 <exclude reference="tDc-TV-ldS"/>
                                 <exclude reference="Gw5-gl-tH8"/>
-                                <exclude reference="T26-lR-n4p"/>
+                                <exclude reference="wwq-wJ-4s0"/>
+                                <exclude reference="1WE-IA-hrG"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -76,7 +89,8 @@
                                 <include reference="cT2-er-Eh0"/>
                                 <include reference="tDc-TV-ldS"/>
                                 <include reference="Gw5-gl-tH8"/>
-                                <include reference="T26-lR-n4p"/>
+                                <include reference="wwq-wJ-4s0"/>
+                                <include reference="1WE-IA-hrG"/>
                             </mask>
                         </variation>
                         <connections>
@@ -87,7 +101,7 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="tableView" destination="T26-lR-n4p" id="jHs-sl-L3r"/>
+                        <outlet property="tableView" destination="wwq-wJ-4s0" id="Uec-8B-RaZ"/>
                         <outlet property="taxPctLabel" destination="Gw5-gl-tH8" id="pFs-9Q-Vae"/>
                         <outlet property="taxPctSlider" destination="tDc-TV-ldS" id="VW1-Vq-gtF"/>
                         <outlet property="totalTextField" destination="cT2-er-Eh0" id="Cvj-Kk-kQL"/>
@@ -100,7 +114,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1648.5" y="146"/>
+            <point key="canvasLocation" x="853.5" y="156"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xXn-GM-ay2">
@@ -118,7 +132,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ZD-I4-zjh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="789" y="146"/>
+            <point key="canvasLocation" x="186" y="156"/>
         </scene>
     </scenes>
 </document>

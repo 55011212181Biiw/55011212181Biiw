@@ -7,35 +7,40 @@
 //
 
 import UIKit
-class ViewController: UIViewController ,UITableViewDelegate{
+class ViewController: UIViewController,UITableViewDelegate{
     
     @IBOutlet var totalTextField :UITextField!
     @IBOutlet var taxPctSlider :UISlider!
     @IBOutlet var taxPctLabel :UILabel!
-    @IBOutlet var resulTextView :UITextView!
+    @IBOutlet var tableView: UITableView!
     
-    @IBOutlet weak var tableView: UITableView!
-    @IBAction func calculatorTapped(sender :AnyObject){
+    let tipCalc = TipCalculatorModel(total:33.25,taxPct:0.06)
+    var possibleTips = Dictionary<Int,(tipAmt:Double,total:Double)>()
+    var sortedKeys:[Int] = []
+    
+    
+    @IBAction func button(sender: AnyObject) {
         //1
         tipCalc.total = Double((totalTextField.text as NSString).doubleValue)
         //2
         let possibleTips = tipCalc.returnPossibleTips()
+        
         var results = ""
         //3
-        for (tipPct, tipValue) in possibleTips{
+        for (tipPct,tipValue) in possibleTips{
             //4
             results += "\(tipCalc)%: \(tipValue)\n"
         }
-        //5
-        resulTextView.text = results
+        
     }
+
     @IBAction func taxPercentageChanged(sender :AnyObject){
         tipCalc.taxPct = Double(taxPctSlider.value) / 100.0
     refreshUI()
     }
     @IBAction func viewTapped(sender :AnyObject){ totalTextField.resignFirstResponder()}
     
-    let tipCalc = TipCalculatorModel(total: 33.25 , taxPct: 0.06)
+    
     func refreshUI(){
         //1
         totalTextField.text = String(format: "%0.2f" ,tipCalc.total)
@@ -44,7 +49,7 @@ class ViewController: UIViewController ,UITableViewDelegate{
         //3
         taxPctLabel.text = "Tax Percentage (\(Int(taxPctSlider.value))%)"
         //4
-        resulTextView.text = ""
+       
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +61,30 @@ class ViewController: UIViewController ,UITableViewDelegate{
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    
+    
+    func tableView(tableView:UITableView!,numberOfRowsInSection section:Int) ->Int{
+        return sortedKeys.count
+    }
+    //UTableViewDataSource methods
+    func numberOfSectionsInTableView(tableView:UITableView!)->Int{
+        return 1
+    }
+    func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+    
+    }
+    func tableView(tableView: UITableView!, cellForRowIndexPath indexPath: NSIndexPath!)->UITableViewCell! {
+        var cell = UITableViewCell(style: UITableViewCellStyle.Value2, reuseIdentifier:nil)
+        let tipPct = sortedKeys[indexPath.row]
+        let tipAmt = possibleTips[tipPct]!.tipAmt
+        let total = possibleTips[tipPct]!.total
+        
+        cell.textLabel!.text = "\(tipPct)%"
+        cell.detailTextLabel!.text = String(format:"Tip:$%0.2f, total:$%0.2f", tipAmt,total)
+        return cell
+        
+    }
 
 }
 

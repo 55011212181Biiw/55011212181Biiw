@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     @IBOutlet var totalTextField :UITextField!
     @IBOutlet var taxPctSlider :UISlider!
     @IBOutlet var taxPctLabel :UILabel!
-    @IBOutlet var resulTextView :UITextView!
+    
     
     @IBAction func calculatorTapped(sender :AnyObject){
         //1
