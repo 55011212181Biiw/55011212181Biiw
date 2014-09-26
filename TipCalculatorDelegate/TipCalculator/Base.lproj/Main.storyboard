@@ -51,16 +51,6 @@
                                     <rect key="frame" x="9" y="117" width="176" height="35"/>
                                 </variation>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="wwq-wJ-4s0">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="60" y="185" width="241" height="415"/>
-                                </variation>
-                                <connections>
-                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="IVT-vK-s8K"/>
-                                </connections>
-                            </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1WE-IA-hrG">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="Calculate">
@@ -73,6 +63,17 @@
                                     <action selector="calculateTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="zAW-8c-dkp"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="wwq-wJ-4s0">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="185" width="241" height="415"/>
+                                </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="l0D-Wp-1yb"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="IVT-vK-s8K"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -82,8 +83,8 @@
                                 <exclude reference="cT2-er-Eh0"/>
                                 <exclude reference="tDc-TV-ldS"/>
                                 <exclude reference="Gw5-gl-tH8"/>
-                                <exclude reference="wwq-wJ-4s0"/>
                                 <exclude reference="1WE-IA-hrG"/>
+                                <exclude reference="wwq-wJ-4s0"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -92,8 +93,8 @@
                                 <include reference="cT2-er-Eh0"/>
                                 <include reference="tDc-TV-ldS"/>
                                 <include reference="Gw5-gl-tH8"/>
-                                <include reference="wwq-wJ-4s0"/>
                                 <include reference="1WE-IA-hrG"/>
+                                <include reference="wwq-wJ-4s0"/>
                             </mask>
                         </variation>
                         <connections>

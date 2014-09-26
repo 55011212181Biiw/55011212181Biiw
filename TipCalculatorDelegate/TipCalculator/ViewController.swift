@@ -7,7 +7,7 @@
 //
 
 import UIKit
-class ViewController: UIViewController,UITableViewDelegate{
+class ViewController: UIViewController,UITableViewDelegate {
     
     @IBOutlet var totalTextField :UITextField!
     @IBOutlet var taxPctSlider :UISlider!
@@ -52,17 +52,18 @@ class ViewController: UIViewController,UITableViewDelegate{
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    func tableView(tableView:UITableView!,numberOfRowsInSection section:Int) ->Int{
+    
+    func tableView(tableView:UITableView!,numberOfRowsInSection section:Int) ->Int {
         return sortedKeys.count
     }
     //UTableViewDataSource methods
-    func numberOfSectionsInTableView(tableView:UITableView!)->Int{
+    func numberOfSectionsInTableView(tableView:UITableView!)->Int {
         return 1
     }
     func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
     
     }
-    func tableView(tableView: UITableView!, cellForRowIndexPath indexPath: NSIndexPath!)->UITableViewCell! {
+    func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!)->UITableViewCell! {
         var cell = UITableViewCell(style: UITableViewCellStyle.Value2, reuseIdentifier:nil)
         let tipPct = sortedKeys[indexPath.row]
         let tipAmt = possibleTips[tipPct]!.tipAmt
@@ -70,6 +71,8 @@ class ViewController: UIViewController,UITableViewDelegate{
         
         cell.textLabel!.text = "\(tipPct)%"
         cell.detailTextLabel!.text = String(format:"Tip:$%0.2f, total:$%0.2f", tipAmt,total)
+        
+        print("TableView calculatTapped\(cell.detailTextLabel?.text)")
         return cell
         
     }
