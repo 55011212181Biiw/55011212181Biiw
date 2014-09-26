@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet var taxPctSlider :UISlider!
     @IBOutlet var taxPctLabel :UILabel!
     
-    
+
     @IBAction func calculatorTapped(sender :AnyObject){
         //1
         tipCalc.total = Double((totalTextField.text as NSString).doubleValue)

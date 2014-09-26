@@ -25,14 +25,6 @@
                                     <rect key="frame" x="9" y="81" width="164" height="41"/>
                                 </variation>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="cT2-er-Eh0">
-                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="169" y="87" width="139" height="30"/>
-                                </variation>
-                            </textField>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="6" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="tDc-TV-ldS">
                                 <rect key="frame" x="0.0" y="-15" width="118" height="31"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
@@ -74,27 +66,35 @@
                                     <rect key="frame" x="55" y="326" width="210" height="58"/>
                                 </variation>
                             </textView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="cT2-er-Eh0">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="169" y="87" width="139" height="30"/>
+                                </variation>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="7dF-P6-Zfu"/>
-                                <exclude reference="cT2-er-Eh0"/>
                                 <exclude reference="tDc-TV-ldS"/>
                                 <exclude reference="5eu-hf-Qaf"/>
                                 <exclude reference="Gw5-gl-tH8"/>
                                 <exclude reference="brj-YB-kPR"/>
+                                <exclude reference="cT2-er-Eh0"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="7dF-P6-Zfu"/>
-                                <include reference="cT2-er-Eh0"/>
                                 <include reference="tDc-TV-ldS"/>
                                 <include reference="5eu-hf-Qaf"/>
                                 <include reference="Gw5-gl-tH8"/>
                                 <include reference="brj-YB-kPR"/>
+                                <include reference="cT2-er-Eh0"/>
                             </mask>
                         </variation>
                         <connections>
@@ -106,6 +106,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="resulTextView" destination="brj-YB-kPR" id="Ctm-9Y-hSy"/>
+                        <outlet property="t" destination="cT2-er-Eh0" id="faC-vH-slW"/>
                         <outlet property="taxPctLabel" destination="Gw5-gl-tH8" id="pFs-9Q-Vae"/>
                         <outlet property="taxPctSlider" destination="tDc-TV-ldS" id="VW1-Vq-gtF"/>
                         <outlet property="totalTextField" destination="cT2-er-Eh0" id="Cvj-Kk-kQL"/>
