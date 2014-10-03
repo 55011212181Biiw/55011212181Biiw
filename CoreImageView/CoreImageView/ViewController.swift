@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import AssetsLibrary
+import Assetslibrary
 
 class ViewController: UIViewController,UINavigationControllerDelegate,UIImagePickerControllerDelegate{
 
@@ -24,7 +24,9 @@ class ViewController: UIViewController,UINavigationControllerDelegate,UIImagePic
    
     @IBAction func amountSliderValueChanged(sender: UISlider) {
         let sliderValue = sender.value
-        let outputImage = self.oldPhoto(beginImage,withAmount: SliderValue)
+        
+        let outputImage = self.oldPhoto(beginImage, withAmount: sliderValue)
+        
         let cgimg = contxet.createCGImage(outputImage, fromRect: outputImage.extent())
         let newImage = UIImage(CGImage: cgimg, scalb: 1,orientation:orientation)
         self.imageView.image = newImage
