@@ -7,53 +7,117 @@
 //
 
 import UIKit
+import AssetsLibrary
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,UINavigationControllerDelegate,UIImagePickerControllerDelegate{
 
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
-    @IBAction func btton1(sender: AnyObject) {
+    @IBOutlet var UIImageCiew: UIImageView!
+    
+    var contxet: CIContext
+    var filter: CIFilter
+    var beginImage: CIImage
+    var orientation: UIImageOrientation = .Up
+   
+    @IBAction func amountSliderValueChanged(sender: UISlider) {
+        let sliderValue = sender.value
+        let outputImage = self.oldPhoto(beginImage,withAmount: SliderValue)
+        let cgimg = contxet.createCGImage(outputImage, fromRect: outputImage.extent())
+        let newImage = UIImage(CGImage: cgimg, scalb: 1,orientation:orientation)
+        self.imageView.image = newImage
+    }
+
+    @IBAction func loadPhoto(sender: AnyObject) {
         let pickerC = UIImagePickerController()
         pickerC.delegate = self
         self.presentViewController(pickerC, animated: true, completion: nil)
     }
-    @IBAction func button2(sender: AnyObject) {
+
+    @IBAction func savePhoto(sender: AnyObject) {
         //1
         let imageToSave = filter.outputImage
         //2
-        let softwareContext = CIContext(options: [kCIContextUseSoftwareRenderer])
+        let softwareContext = CIContext(options: [kCIContextUseSoftwareRenderer:true])
         //3
-        let cgimg = softwareContext.createCgImage(imageToSave,fromRect:imageToSave.extent())
-        //4 
-        let library = ALAssetsLibrary()
-        library.writeImageToSavedPhotoAlbum(cgimg,metadata:imageToSave.proerties(),completion:nil)
-    }
-    @IBAction func slider1(sender: AnyObject) {
-        let SliderValue = sender.value
-        let outputImage = self.oldPhoto(biginImage,withAmount:SliderValue)
-        let cgimg = context.createCGImage(outputImage,fromRect:outputImage.extent())
-        let newImage = UIImage(CGImage: cgimg,scalb(orientation:orientation)
-        self.imageView.image = newImage
+        let cgimg = softwareContext.createCGImage(imageToSave,fromRect:imageToSave.extent())
+        //4
+        let library = ALAssetLibrary()
+        library.writeImageToSavedPhotoAlbum(cgimg,metadata:imageToSave.properties(),compltionBlock:nil)
     }
     
-    @IBOutlet var UIImageCiew: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         //1
-        let fileURL = NSBundle.mainBundle().URLForResource("image", withExtension:"png")
+        let fileURL = NSBundle.mainBundle().URLForResource("image", withExtension:"jpg")
         //2
-        biginImage = CIImage(contentsOfURL:fileURL)
+        beginImage = CIImage(contentsOfURL:fileURL)
         //3
         filter = CIFilter(name:"CISepiaTone")
-        filter.setValue(biginImage,forKey:kCIInputImageKey)
-        filter.setValue(0.5,forKey:kCIInputIntensityKey)
+        filter.setValue(beginImage,forKey:kCIInputImageKey)
+        filter.setValue( 0.5, forKey: kCIInputIntensityKey)
+        let outputImage = filter.outputImage
         //1
-        context = CIContext(options: nil)
-        let cgimg = context.createCGImage(outputImage,fromRect:outputImage.extent())
+        contxet = CIContext(options: nil)
+        let cgimg = contxet.createCGImage(outputImage, fromRect: outputImage.extent())
         
         //2
         let newImage = UIImage(CGImage: cgimg)
-        self.imageView.image = newImage
+        self.UIImageCiew.image = newImage
         self.logAllFilters()
+       
+    }
+    //imagePicker
+    func imagePickerController(picker:UIImagePickerController!,didFinishPickingMediaWithInfo info:NSDictionary!){
+        self.dismissViewControllerAnimated(true, completion: nil);
+        let gotImage = info [UIImagePickerControllerOriginalImage] as UIImage
+        
+        beginImage = CIImage(image:gotImage)
+        orientation = gotImage.imageOrientation
+        filter.setValue(beginImage, forKey: kCIInputImageKey)
+        
+    }
+    //logAllFilters
+    func logAllFilters(){
+        let properties = CIFilter.filterNamesInCategory(kCICategoryBuiltIn)
+        print(properties)
+        
+        for filterName:AnyObject in properties{
+            let fltr = CIFilter(name:filterName as String)
+            print(fltr.attributes())
+        }
+    }
+    
+    //oldPhoto
+    func oldPhoto(img:CIImage,WithSmount intensity: Float) ->CIImage{
+        //1
+        let sepia = CIFilter(name:"CISepiaTone")
+        sepia.setValue(img, forKey: kCIInputImageKey)
+        sepia.setValue(intensity, forKey: "inputIntensity")
+        //2
+        let random = CIFilter(name:"CIRandomGenerator")
+        //3
+        let ligten = CIFilter(name:"CIColorControls")
+        ligten.setValue(random.outputImage, forKey: kCIInputImageKey)
+        ligten.setValue(1 - intensity, forKey: "inputBrightness")
+        ligten.setValue(0, forKey: "inputSatulation")
+        //4
+        let croppedImage = ligten.outputImage.imageByCroppingToRect(beginImage.extent())
+        //5
+        let composite = CIFilter(name: "CIHardLightBlendMode")
+        composite.setValue(sepia.outputImage, forKey: kCIInputImageKey)
+        composite.setValue(croppedImage, forKey: kCIInputBackgroundImageKey)
+        //6
+        let vignette = CIFilter(name: "CIVignette")
+        vignette.setValue(composite.outputImage, forKey: kCIInputImageKey)
+        vignette.setValue(intensity * 2, forKey: "inputIntensity")
+        vignette.setValue(intensity * 30, forKey: "iputRadius")
+        //7
+        return vignette.outputImage
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,4 +127,6 @@ class ViewController: UIViewController {
 
 
 }
+
+
 

@@ -13,6 +13,7 @@
 		3F69078819DE76360081D1BC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F69078719DE76360081D1BC /* Images.xcassets */; };
 		3F69078B19DE76360081D1BC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F69078919DE76360081D1BC /* LaunchScreen.xib */; };
 		3F69079719DE76360081D1BC /* CoreImageViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F69079619DE76360081D1BC /* CoreImageViewTests.swift */; };
+		3F6907A319DE98DE0081D1BC /* ktm_1290_superduke_r_patriot_04.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F6907A219DE98DE0081D1BC /* ktm_1290_superduke_r_patriot_04.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		3F69079019DE76360081D1BC /* CoreImageViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreImageViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F69079519DE76360081D1BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F69079619DE76360081D1BC /* CoreImageViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreImageViewTests.swift; sourceTree = "<group>"; };
+		3F6907A219DE98DE0081D1BC /* ktm_1290_superduke_r_patriot_04.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ktm_1290_superduke_r_patriot_04.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 		3F69077E19DE76360081D1BC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3F6907A219DE98DE0081D1BC /* ktm_1290_superduke_r_patriot_04.jpg */,
 				3F69077F19DE76360081D1BC /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -194,6 +197,7 @@
 			files = (
 				3F69078619DE76360081D1BC /* Main.storyboard in Resources */,
 				3F69078B19DE76360081D1BC /* LaunchScreen.xib in Resources */,
+				3F6907A319DE98DE0081D1BC /* ktm_1290_superduke_r_patriot_04.jpg in Resources */,
 				3F69078819DE76360081D1BC /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,6 +409,7 @@
 				3F69079C19DE76360081D1BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3F69079D19DE76360081D1BC /* Build configuration list for PBXNativeTarget "CoreImageViewTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +418,7 @@
 				3F69079F19DE76360081D1BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
