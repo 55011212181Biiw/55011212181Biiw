@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CoreImageView/ViewController.swift"
-            timestampString = "434018955.549584"
+            timestampString = "434022276.597684"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
             landmarkName = "loadPhoto(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,13 +26,59 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CoreImageView/ViewController.swift"
-            timestampString = "434019498.897682"
+            timestampString = "434022276.597684"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "44"
             endingLineNumber = "44"
             landmarkName = "savePhoto(_:)"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CoreImageView/ViewController.swift"
+            timestampString = "434021035.172209"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "ViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CoreImageView.ViewController.__deallocating_deinit"
+                  moduleName = "CoreImageView"
+                  urlString = "file:///Users/student/Desktop/55011212181Biiw/CoreImageView/CoreImageView/ViewController.swift"
+                  timestampString = "434022300.633685"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "@objc CoreImageView.ViewController.__ivar_destroyer"
+                  moduleName = "CoreImageView"
+                  urlString = "file:///Users/student/Desktop/55011212181Biiw/CoreImageView/CoreImageView/ViewController.swift"
+                  timestampString = "434022300.63382"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "15">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

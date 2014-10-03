@@ -4,32 +4,29 @@
 //
 //  Created by Student on 10/3/14.
 //  Copyright (c) 2014 Student. All rights reserved.
-//
 
 import UIKit
-import Assetslibrary
+import AssetsLibrary
 
-class ViewController: UIViewController,UINavigationControllerDelegate,UIImagePickerControllerDelegate{
-
-    required init(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+class ViewController:UIViewController,UINavigationControllerDelegate,UIImagePickerControllerDelegate{
     
     @IBOutlet var UIImageCiew: UIImageView!
     
-    var contxet: CIContext
-    var filter: CIFilter
-    var beginImage: CIImage
+    var contxet: CIContext!
+    var filter: CIFilter!
+    var beginImage: CIImage!
     var orientation: UIImageOrientation = .Up
    
+    @IBOutlet var amountSlider: UISlider!
+    
     @IBAction func amountSliderValueChanged(sender: UISlider) {
         let sliderValue = sender.value
         
-        let outputImage = self.oldPhoto(beginImage, withAmount: sliderValue)
+        let outputImage = self.oldPhoto(beginImage, WithAmount: sliderValue)
         
         let cgimg = contxet.createCGImage(outputImage, fromRect: outputImage.extent())
-        let newImage = UIImage(CGImage: cgimg, scalb: 1,orientation:orientation)
-        self.imageView.image = newImage
+        let newImage = UIImage(CGImage: cgimg, scale:1,orientation:orientation)
+        self.UIImageCiew.image = newImage
     }
 
     @IBAction func loadPhoto(sender: AnyObject) {
@@ -46,8 +43,8 @@ class ViewController: UIViewController,UINavigationControllerDelegate,UIImagePic
         //3
         let cgimg = softwareContext.createCGImage(imageToSave,fromRect:imageToSave.extent())
         //4
-        let library = ALAssetLibrary()
-        library.writeImageToSavedPhotoAlbum(cgimg,metadata:imageToSave.properties(),compltionBlock:nil)
+        let library = ALAssetsLibrary()
+        library.writeImageToSavedPhotosAlbum(cgimg,metadata: imageToSave.properties(),completionBlock:nil)
     }
     
     override func viewDidLoad() {
@@ -68,7 +65,19 @@ class ViewController: UIViewController,UINavigationControllerDelegate,UIImagePic
         //2
         let newImage = UIImage(CGImage: cgimg)
         self.UIImageCiew.image = newImage
+        
         self.logAllFilters()
+    }
+    
+        //logAllFilters
+        func logAllFilters(){
+            let properties = CIFilter.filterNamesInCategory(kCICategoryBuiltIn)
+            println(properties)
+            
+            for filterName:AnyObject in properties{
+                let fltr = CIFilter(name:filterName as String)
+                println(fltr.attributes())
+            }
        
     }
     //imagePicker
@@ -79,21 +88,11 @@ class ViewController: UIViewController,UINavigationControllerDelegate,UIImagePic
         beginImage = CIImage(image:gotImage)
         orientation = gotImage.imageOrientation
         filter.setValue(beginImage, forKey: kCIInputImageKey)
-        
+        self.amountSliderValueChanged(amountSlider)
     }
-    //logAllFilters
-    func logAllFilters(){
-        let properties = CIFilter.filterNamesInCategory(kCICategoryBuiltIn)
-        print(properties)
-        
-        for filterName:AnyObject in properties{
-            let fltr = CIFilter(name:filterName as String)
-            print(fltr.attributes())
-        }
-    }
-    
+
     //oldPhoto
-    func oldPhoto(img:CIImage,WithSmount intensity: Float) ->CIImage{
+    func oldPhoto(img:CIImage,WithAmount intensity: Float) -> CIImage{
         //1
         let sepia = CIFilter(name:"CISepiaTone")
         sepia.setValue(img, forKey: kCIInputImageKey)
@@ -119,6 +118,7 @@ class ViewController: UIViewController,UINavigationControllerDelegate,UIImagePic
         //7
         return vignette.outputImage
         
+
         
     }
 
