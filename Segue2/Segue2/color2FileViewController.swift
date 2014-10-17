@@ -10,10 +10,14 @@ import UIKit
 
 class color2FileViewController: UIViewController {
     
-    var color = ""
+    var colorString = ""
+    
     @IBOutlet weak var color2Label: UILabel!
     
+    @IBOutlet weak var label: UILabel!
     @IBAction func saveColor(sender: UIBarButtonItem) {
+        
+    
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +31,8 @@ class color2FileViewController: UIViewController {
     }
     
     @IBAction func colorSelectionBT(sender: UIButton) {
+        color2Label.text = "GREEEN"
+       
     }
     
 
