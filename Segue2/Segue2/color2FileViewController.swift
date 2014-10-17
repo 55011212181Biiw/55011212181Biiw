@@ -9,7 +9,12 @@
 import UIKit
 
 class color2FileViewController: UIViewController {
-
+    
+    var color = ""
+    @IBOutlet weak var color2Label: UILabel!
+    
+    @IBAction func saveColor(sender: UIBarButtonItem) {
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,6 +24,9 @@ class color2FileViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func colorSelectionBT(sender: UIButton) {
     }
     
 

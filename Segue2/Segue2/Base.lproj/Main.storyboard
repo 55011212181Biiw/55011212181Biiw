@@ -16,15 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dvu-37-ftO">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="179" y="289" width="42" height="21"/>
-                                </variation>
-                            </label>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iSb-eR-d9e">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <items>
@@ -40,18 +31,27 @@
                                     <rect key="frame" x="0.0" y="64" width="400" height="44"/>
                                 </variation>
                             </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dvu-37-ftO">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="174" y="289" width="42" height="21"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="dvu-37-ftO"/>
                                 <exclude reference="iSb-eR-d9e"/>
+                                <exclude reference="dvu-37-ftO"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="dvu-37-ftO"/>
                                 <include reference="iSb-eR-d9e"/>
+                                <include reference="dvu-37-ftO"/>
                             </mask>
                         </variation>
                     </view>
@@ -64,18 +64,101 @@
             </objects>
             <point key="canvasLocation" x="819" y="394"/>
         </scene>
-        <!--View Controller-->
+        <!--Color2 File View Controller-->
         <scene sceneID="t5P-o8-0sS">
             <objects>
-                <viewController id="86X-n9-sdG" sceneMemberID="viewController">
+                <viewController id="86X-n9-sdG" customClass="color2FileViewController" customModule="Segue2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kSN-xs-dYh"/>
                         <viewControllerLayoutGuide type="bottom" id="54m-Yl-Ace"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="uOP-Fa-prr">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vbf-9U-nD9">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="L6j-wr-LLD">
+                                        <barButtonItem key="leftBarButtonItem" title="Save" id="dCu-cQ-u9u">
+                                            <connections>
+                                                <action selector="saveColor:" destination="86X-n9-sdG" id="typ-gg-hPg"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="64" width="400" height="44"/>
+                                </variation>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TTo-Xc-nqh">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Red">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="36" y="285" width="46" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="colorSelectionBT:" destination="86X-n9-sdG" eventType="touchUpInside" id="lsI-Rl-xYp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IwT-UB-FbX">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Green">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="311" y="285" width="46" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="colorSelectionBT:" destination="86X-n9-sdG" eventType="touchUpInside" id="sFN-Wo-Md6"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WdJ-oa-Adp">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="164" y="164" width="42" height="21"/>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4y7-lc-FBV">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Blue">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="160" y="285" width="46" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="colorSelectionBT:" destination="86X-n9-sdG" eventType="touchUpInside" id="j14-Rc-KLa"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Vbf-9U-nD9"/>
+                                <exclude reference="TTo-Xc-nqh"/>
+                                <exclude reference="IwT-UB-FbX"/>
+                                <exclude reference="WdJ-oa-Adp"/>
+                                <exclude reference="4y7-lc-FBV"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="Vbf-9U-nD9"/>
+                                <include reference="TTo-Xc-nqh"/>
+                                <include reference="IwT-UB-FbX"/>
+                                <include reference="WdJ-oa-Adp"/>
+                                <include reference="4y7-lc-FBV"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="color2Label" destination="WdJ-oa-Adp" id="c4V-oP-DSU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ewk-mN-QeE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
