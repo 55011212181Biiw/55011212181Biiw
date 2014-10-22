@@ -67,12 +67,14 @@
         <!--Color2 File View Controller-->
         <scene sceneID="t5P-o8-0sS">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ewk-mN-QeE" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="86X-n9-sdG" customClass="color2FileViewController" customModule="Segue2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kSN-xs-dYh"/>
                         <viewControllerLayoutGuide type="bottom" id="54m-Yl-Ace"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="uOP-Fa-prr">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vbf-9U-nD9">
@@ -99,7 +101,7 @@
                                     <rect key="frame" x="36" y="285" width="46" height="30"/>
                                 </variation>
                                 <connections>
-                                    <action selector="colorSelectionBT:" destination="86X-n9-sdG" eventType="touchUpInside" id="lsI-Rl-xYp"/>
+                                    <action selector="colorSelectionBT:" destination="86X-n9-sdG" eventType="touchUpInside" id="9tj-yI-zxP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IwT-UB-FbX">
@@ -111,7 +113,7 @@
                                     <rect key="frame" x="311" y="285" width="46" height="30"/>
                                 </variation>
                                 <connections>
-                                    <action selector="colorSelectionBT:" destination="86X-n9-sdG" eventType="touchUpInside" id="sFN-Wo-Md6"/>
+                                    <action selector="colorSelectionBT:" destination="86X-n9-sdG" eventType="touchUpInside" id="Z4h-7e-uuZ"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WdJ-oa-Adp">
@@ -132,7 +134,7 @@
                                     <rect key="frame" x="160" y="285" width="46" height="30"/>
                                 </variation>
                                 <connections>
-                                    <action selector="colorSelectionBT:" destination="86X-n9-sdG" eventType="touchUpInside" id="j14-Rc-KLa"/>
+                                    <action selector="colorSelectionBT:" destination="86X-n9-sdG" eventType="touchUpInside" id="Shi-Ia-bqV"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -158,10 +160,9 @@
                     </view>
                     <connections>
                         <outlet property="color2Label" destination="WdJ-oa-Adp" id="c4V-oP-DSU"/>
-                        <outlet property="label" destination="WdJ-oa-Adp" id="4wi-H2-u3x"/>
+                        <outlet property="titleLable" destination="WdJ-oa-Adp" id="cRE-kR-mHU"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ewk-mN-QeE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1569" y="394"/>
         </scene>
