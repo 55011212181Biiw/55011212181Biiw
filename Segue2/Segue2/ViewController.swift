@@ -10,13 +10,14 @@ import UIKit
 
 class ViewController: UIViewController,color2FileViewControllerDelegate {
 
-    @IBOutlet var colorLabel: UILabel!
+    
+    @IBOutlet weak var colorLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
     func myVCDidFinish(controller:color2FileViewController,text:String){
-        colorLabel.text = "Co:" + text
+        colorLabel.text = "Color :" + text
         controller.navigationController?.popViewControllerAnimated(true)
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {

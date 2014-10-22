@@ -16,22 +16,23 @@ class color2FileViewController: UIViewController {
     var delegate:color2FileViewControllerDelegate? = nil
     var colorString = ""
     
-    @IBOutlet weak var color2Label: UILabel!
+    
+    @IBOutlet weak var colorLabel: UILabel!
     @IBOutlet weak var titleLable: UILabel!
     @IBAction func saveColor(sender: UIBarButtonItem) {
         if(delegate != nil){
-            delegate!.myVCDidFinish(self,text:color2Label!.text!)
+            delegate!.myVCDidFinish(self,text:colorLabel!.text!)
         }
     
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        color2Label.text = colorString
+        colorLabel.text = colorString
     }
 
     @IBAction func colorSelectionBT(sender: UIButton) {
-        color2Label.text = sender.titleLabel!.text!
+        colorLabel.text = sender.titleLabel!.text!
     }
     
 

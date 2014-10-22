@@ -57,7 +57,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="XZC-kE-x5V"/>
                     <connections>
-                        <outlet property="colorLabel" destination="kh9-bI-dsS" id="Rvx-tp-I6G"/>
+                        <outlet property="colorLabel" destination="dvu-37-ftO" id="xJc-jW-ONo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -159,7 +159,7 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="color2Label" destination="WdJ-oa-Adp" id="c4V-oP-DSU"/>
+                        <outlet property="colorLabel" destination="WdJ-oa-Adp" id="WzM-5c-BQw"/>
                         <outlet property="titleLable" destination="WdJ-oa-Adp" id="cRE-kR-mHU"/>
                     </connections>
                 </viewController>
