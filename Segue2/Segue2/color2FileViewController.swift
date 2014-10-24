@@ -33,6 +33,15 @@ class color2FileViewController: UIViewController {
 
     @IBAction func colorSelectionBT(sender: UIButton) {
         colorLabel.text = sender.titleLabel!.text!
+        if(sender.titleLabel!.text! == "Red"){
+            colorLabel.backgroundColor = UIColor.redColor()
+        }
+        else if(sender.titleLabel!.text! == "Blue"){
+            colorLabel.backgroundColor = UIColor.blueColor()
+        }
+        else if(sender.titleLabel!.text! == "Green"){
+            colorLabel.backgroundColor = UIColor.greenColor()
+        }
     }
     
 

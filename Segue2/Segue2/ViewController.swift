@@ -18,6 +18,15 @@ class ViewController: UIViewController,color2FileViewControllerDelegate {
     }
     func myVCDidFinish(controller:color2FileViewController,text:String){
         colorLabel.text = "Color :" + text
+        if(text == "Red"){
+            colorLabel.backgroundColor = UIColor.redColor()
+        }
+        else if(text == "Blue"){
+            colorLabel.backgroundColor = UIColor.blueColor()
+        }
+        else if(text == "Green"){
+            colorLabel.backgroundColor = UIColor.greenColor()
+        }
         controller.navigationController?.popViewControllerAnimated(true)
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
