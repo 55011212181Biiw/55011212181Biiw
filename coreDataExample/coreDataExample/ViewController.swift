@@ -64,7 +64,17 @@ class ViewController: UIViewController,UITableViewDataSource{
         let managedContext = appDelegate.managedObjectContext!
         
         //2
-        let entity = 
+        let entity = NSEntityDescription.entityForName("Item", inManagedObjectContext: managedContext)
+        let item = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
+        //3
+        item.setValue(name, forKey: "name")
+        //4
+        var error:NSError?
+        if !managedContext.save(&error){
+            print("Could not save \(error),\(error?.userInfo)")
+        }
+        //5
+        items.append(item)
     }
 
 }
