@@ -67,7 +67,6 @@ class ViewController: UIViewController,UITableViewDataSource{
         UIApplication.sharedApplication().delegate as AppDelegate
         
         let managedContext = appDelegate.managedObjectContext!
-        
         //2
         let entity = NSEntityDescription.entityForName("Item", inManagedObjectContext: managedContext)
         
@@ -82,7 +81,7 @@ class ViewController: UIViewController,UITableViewDataSource{
         }
         //5
         items.append(item)
-    }
+   }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
