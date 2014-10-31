@@ -37,7 +37,10 @@ class ViewController: UIViewController,UITableViewDataSource{
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "\"Shopping List\""
-        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.registerClass(UITableViewCell.self,
+            forCellReuseIdentifier: "Cell")
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,15 +51,17 @@ class ViewController: UIViewController,UITableViewDataSource{
         return items.count
     }
      func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
         let cell =
-        tableView.dequeueReusableCellWithIdentifier("cell")
+        tableView.dequeueReusableCellWithIdentifier("Cell")
         as UITableViewCell
         
         let item = items[indexPath.row]
-        cell.textLabel!.text = item.valueForKey("name")as String?
+        cell.textLabel!.text = item.valueForKey("name") as String?
+        
         return cell
     }
-    func saveName(name:String){
+    func saveName(name: String){
         //1
         let appDelegate =
         UIApplication.sharedApplication().delegate as AppDelegate
@@ -65,16 +70,42 @@ class ViewController: UIViewController,UITableViewDataSource{
         
         //2
         let entity = NSEntityDescription.entityForName("Item", inManagedObjectContext: managedContext)
-        let item = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
+        
+        let item = NSManagedObject(entity: entity!,
+            insertIntoManagedObjectContext: managedContext)
         //3
         item.setValue(name, forKey: "name")
         //4
-        var error:NSError?
+        var error: NSError?
         if !managedContext.save(&error){
-            print("Could not save \(error),\(error?.userInfo)")
+            println("Could not save \(error),\(error?.userInfo)")
         }
         //5
         items.append(item)
+    }
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        //1
+        let appDelegate =
+        UIApplication.sharedApplication().delegate as AppDelegate
+        
+        let  managedContext = appDelegate.managedObjectContext!
+        
+        //2
+        let fetchRequest = NSFetchRequest(entityName: "Item")
+        
+        //3
+        var error: NSError?
+        
+        let fetchedResults = managedContext.executeFetchRequest(fetchRequest, error: &error) as [NSManagedObject]?
+        
+        if let results = fetchedResults{
+            items = results
+        }else{
+            println("Could not fetch\(error),\(error!.userInfo)")
+        }
+        
     }
 
 }
