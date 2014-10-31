@@ -14,7 +14,7 @@ class ViewController: UIViewController,UITableViewDataSource{
 
     @IBOutlet weak var tableView: UITableView!
     @IBAction func addItem(sender: AnyObject) {
-        var alert = UIAlertController(title: "New Item", message: "Add a new item", preferredStyle: .Alert)
+        var alert = UIAlertController(title: "New Item", message: "Add a new Item", preferredStyle: .Alert)
         
         let saveAction = UIAlertAction(title: "Save", style: .Default) { (action:UIAlertAction!) -> Void in
             
@@ -78,7 +78,7 @@ class ViewController: UIViewController,UITableViewDataSource{
         //4
         var error: NSError?
         if !managedContext.save(&error){
-            println("Could not save \(error),\(error?.userInfo)")
+            println("Could not Save \(error),\(error?.userInfo)")
         }
         //5
         items.append(item)
