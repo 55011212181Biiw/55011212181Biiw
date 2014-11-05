@@ -40,6 +40,18 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="Mdw-JL-UZV">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="3wF-Mq-dSZ">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gDh-FD-tHG">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Delete">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteItem:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="qLS-DQ-RBs"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Add" id="Q6l-zy-eIh">
                             <connections>
                                 <action selector="addItem:" destination="vXZ-lx-hvc" id="Qbm-BH-03P"/>

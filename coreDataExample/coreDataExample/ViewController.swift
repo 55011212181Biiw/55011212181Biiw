@@ -11,7 +11,7 @@ import CoreData
 class ViewController: UIViewController,UITableViewDataSource{
     
     var items = [NSManagedObject]()
-
+    var myList: Array<AnyObject> = []
     @IBOutlet weak var tableView: UITableView!
     @IBAction func addItem(sender: AnyObject) {
         var alert = UIAlertController(title: "New Item", message: "Add a new Item", preferredStyle: .Alert)
@@ -32,6 +32,35 @@ class ViewController: UIViewController,UITableViewDataSource{
         presentViewController(alert,
             animated: true,
             completion: nil)
+        
+    }
+    @IBAction func deleteItem(sender: AnyObject) {
+        
+        
+        var storeCoordinator:NSPersistentStoreCoordinator = /* Your already existing NSPersistantStoreCoordinator */
+        var store:NSPersistentStore = storeCoordinatorpersistantStores[0] as NSPersistantStore
+        
+        NSFileManager.defaultManager().removeItemAtPath(storeURL.path!, error: nil)
+        
+//
+//            let appDel: AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+//            let context: NSManagedObjectContext = appDel.managedObjectContext!
+//            let request = NSFetchRequest(entityName: "Item")
+//            context.executeFetchRequest(request, error: nil)
+//            tableView.reloadData()
+//        
+//        if let tv = tableView{
+//            var bas : NSManagedObject!
+//            
+//                    for b: AnyObject in items
+//                        {
+//                            context.deleteObject(bas as NSManagedObject)
+//                        }
+//            
+//                        items.removeAll(keepCapacity: false)
+//                        tv.reloadData()
+//                        context.save(nil)
+//        }
         
     }
     override func viewDidLoad() {
@@ -104,6 +133,7 @@ class ViewController: UIViewController,UITableViewDataSource{
         }else{
             println("Could not fetch\(error),\(error!.userInfo)")
         }
+        
         
     }
 
