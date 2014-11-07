@@ -114,7 +114,23 @@ class ViewController: UIViewController,UICollisionBehaviorDelegate{
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    func panning(pan: UIPanGestureRecognizer){
+        println("Our box is panning")
+        var location = pan.locationInView(self.square)
+        if pan.state == UIGestureRecognizerState.Began {
+            self.animator!.removeAllBehaviors()
+            self.square!.center = location
+            
+        }else if pan.state == UIGestureRecognizerState.Changed{
+            self.square!.center = location
+            
+        }else if pan.state == UIGestureRecognizerState.Ended{
+            self.animator!.addBehavior(self.gravity)
+            self.animator!.addBehavior(self.collision)
+        }
+        
+        
+    }
 
 }
 
