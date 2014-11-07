@@ -65,28 +65,39 @@ class ViewController: UIViewController,UICollisionBehaviorDelegate{
 
             let collidingView = item as UIView
             collidingView.backgroundColor = UIColor.yellowColor()
-            UIView.animateWithDuration(1){
+            UIView.animateWithDuration(0.3){
             collidingView.backgroundColor = UIColor.grayColor()
             }
            
-//            var firstContact = false
-//            if(!firstContact){
-//                firstContact = true
-//                
-//                let square = UIView(frame: CGRect(x: 30, y: 0, width: 100, height: 100))
-//                square.backgroundColor = UIColor.grayColor()
-//                view.addSubview(square)
-//                
-//                collision.addItem(square)
-//                gravity.addItem(square)
-//                
-//                let attach = UIAttachmentBehavior(item: collidingView, attachedToItem: square)
-//                animator.addBehavior(attach)
-//                
-//                
-//            }
+            var firstContact = false
+            if(!firstContact){
+                firstContact = true
+                
+                let square = UIView(frame: CGRect(x: 30, y: 0, width: 20, height: 20))
+                square.backgroundColor = getRandomColor()
+                view.addSubview(square)
+                
+                collision.addItem(square)
+                gravity.addItem(square)
+                
+                let attach = UIAttachmentBehavior(item: collidingView, attachedToItem: square)
+                animator.addBehavior(attach)
+                
+                
+            }
             
         }
+    func getRandomColor() -> UIColor{
+        
+        var randomRed:CGFloat = CGFloat(drand48())
+        
+        var randomGreen:CGFloat = CGFloat(drand48())
+        
+        var randomBlue:CGFloat = CGFloat(drand48())
+        
+        return UIColor(red: randomRed, green: randomGreen, blue: randomBlue, alpha: 1.0)
+        
+    }
         
     override func touchesEnded(touches:NSSet,withEvent event:UIEvent){
         if(snap != nil){
