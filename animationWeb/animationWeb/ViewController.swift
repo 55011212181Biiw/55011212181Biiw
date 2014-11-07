@@ -11,24 +11,27 @@ import UIKit
 class ViewController: UIViewController {
     
     let coloredSquare = UIView()
-    
+    let duration = 1.0
+    let delay = 0.0
+    let options = UIViewAnimationOptions.CurveEaseInOut
+    let damping = 0.5
+    let velocity = 1.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
         coloredSquare.backgroundColor = UIColor.blueColor()
         coloredSquare.frame = CGRect(x: 0, y: 120, width: 50, height: 50)
         self.view.addSubview(coloredSquare)
         
-        UIView.animateWithDuration(1.0, animations: {
+        let options = UIViewAnimationOptions.Repeat
+        UIView.animateWithDuration(1.0, delay:0.0,options:options,animations: {
             self.coloredSquare.backgroundColor = UIColor.redColor()
             self.coloredSquare.frame = CGRect(x: 320-50, y: 120, width: 50, height: 50)
         },completion:nil)
         
-        let duration = 1.0
-        let delay = 0.0
-        let options = UIViewAnimationOptions.CurveEaseInOut
-        UIView.animateWithDuration(duration,delay:delay, options:options,animations:{
+       
+        UIView.animateWithDuration(duration,delay:0.0,usingSpringWithDamping: 0.5, initialSpringVelocity: 1.0, options:UIViewAnimationOptions.CurveEaseInOut,animations:{
             
             },completion:{finish in
                 

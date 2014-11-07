@@ -73,7 +73,8 @@ class ViewController: UIViewController,UICollisionBehaviorDelegate{
             if(!firstContact){
                 firstContact = true
                 
-                let square = UIView(frame: CGRect(x: 30, y: 0, width: 20, height: 20))
+                //let square = UIView(frame: CGRect(x: 30, y: 0, width: 20, height: 20))
+            let square = UIView(frame: CGRect(x: self.view.frame.origin.x + self.square.frame.origin.x, y: self.view.frame.origin.y + self.square.frame.origin.y, width: 20, height: 20))
                 square.backgroundColor = getRandomColor()
                 view.addSubview(square)
                 
