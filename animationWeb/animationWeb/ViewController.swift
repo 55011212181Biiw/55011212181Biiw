@@ -17,6 +17,21 @@ class ViewController: UIViewController {
     let damping = 0.5
     let velocity = 1.0
     
+    let container = UIView()
+    let redSquare = UIView()
+    let blueSquare = UIView()
+    
+    @IBAction func animate(sender: AnyObject) {
+        let views = (fronView:self.redSquare,backView:self.blueSquare)
+        let transitionOptions = UIViewAnimationOptions.TransitionCurlUp
+        
+        UIView.transitionWithView(self.container,duration: 1.0, options: transitionOptions, animations:{
+            views.fronView.removeFromSuperview()
+            self.container.addSubview(views.backView)
+            },completion:{finish in
+    })
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,6 +54,21 @@ class ViewController: UIViewController {
             },completion:{finish in
                 
         })
+        
+        self.container.frame = CGRect(x: 50, y: 100, width: 200, height: 200)
+        self.view.addSubview(container)
+        
+        self.redSquare.frame = CGRect(x: 50 , y: 100, width: 200, height: 200)
+        self.blueSquare.frame = redSquare.frame
+        
+        self.redSquare.backgroundColor = UIColor.redColor()
+        self.blueSquare.backgroundColor = UIColor.blueColor()
+        
+        self.container.addSubview(self.redSquare)
+        
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
