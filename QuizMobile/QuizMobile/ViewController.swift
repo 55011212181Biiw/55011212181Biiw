@@ -10,27 +10,43 @@ import UIKit
 import CoreMotion
 var MAX_X = 0
 var MAX_Y = 0
-let BOX_SIZE:CGFloat = 15
-let NUMBER_OF_BOXER = 30
+let BOX_SIZE:CGFloat = 20
+let NUMBER_OF_BOXER = 20
 class ViewController: UIViewController {
     var boxes = [UIView]()
     
     var animator:UIDynamicAnimator?
-    let gravity = UIGravityBehavior()
-    let collider = UICollisionBehavior()
-    let itemBehavior = UIDynamicItemBehavior()
+    var gravity = UIGravityBehavior()
+    var collider = UICollisionBehavior()
+    var itemBehavior = UIDynamicItemBehavior()
     
     let motionQueue = NSOperationQueue()
     let motionManager = CMMotionManager()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        MAX_X = 200
-        MAX_Y = 60
+    @IBAction func add(sender: AnyObject) {
+        MAX_X = 300
+        MAX_Y = 100
         
         
         createAnimator()
         generateBoxes(NUMBER_OF_BOXER)
+    }
+    @IBAction func start(sender: AnyObject) {
+        animator = 
+       
+    }
+    @IBAction func stop(sender: AnyObject) {
+        animator = nil
+    }
+   override func viewDidLoad() {
+        super.viewDidLoad()
+    MAX_X = 300
+    MAX_Y = 100
+    
+    
+    createAnimator()
+    generateBoxes(NUMBER_OF_BOXER)
+
     }
     func createAnimator(){
         animator = UIDynamicAnimator(referenceView: view)
