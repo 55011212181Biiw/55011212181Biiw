@@ -32,7 +32,7 @@ class ViewController: UIViewController {
         generateBoxes(NUMBER_OF_BOXER)
     }
     @IBAction func start(sender: AnyObject) {
-        animator = 
+        createAnimator()
        
     }
     @IBAction func stop(sender: AnyObject) {
@@ -40,12 +40,14 @@ class ViewController: UIViewController {
     }
    override func viewDidLoad() {
         super.viewDidLoad()
+    view.backgroundColor = UIColor.cyanColor()
     MAX_X = 300
     MAX_Y = 100
     
     
     createAnimator()
     generateBoxes(NUMBER_OF_BOXER)
+    
 
     }
     func createAnimator(){
