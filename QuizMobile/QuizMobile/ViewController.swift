@@ -40,7 +40,7 @@ class ViewController: UIViewController {
     }
    override func viewDidLoad() {
         super.viewDidLoad()
-    view.backgroundColor = UIColor.cyanColor()
+    //view.backgroundColor = UIColor.cyanColor()
     MAX_X = 300
     MAX_Y = 100
     
