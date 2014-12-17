@@ -16,6 +16,9 @@ class StocksViewController: UIViewController {
     @IBOutlet weak var nameTF: UITextField!
     @IBOutlet weak var amountTF: UITextField!
     @IBOutlet weak var priceTF: UITextField!
+    @IBAction func save(sender: AnyObject) {
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -8,7 +8,7 @@
 
 import UIKit
 import CoreData
-class ViewController: UIViewController{
+class ViewController: UIViewController, UITableViewDataSource{
 
     var items = [NSManagedObject]()
     
@@ -28,6 +28,20 @@ class ViewController: UIViewController{
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
+    }
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return items.count
+    }
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let cell =
+        tableView.dequeueReusableCellWithIdentifier("Cell")
+            as UITableViewCell
+        
+        let item = items[indexPath.row]
+        cell.textLabel!.text = item.valueForKey("name") as String?
+        
+        return cell
     }
 }
 
